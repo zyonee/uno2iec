@@ -69,7 +69,7 @@ void setup()
 	iec.init();
 
 #ifdef USE_LED_DISPLAY
-	pMax->resetScrollText_p(myText);
+	pMax->resetScrollText(myText);
 #endif
 
 	lastMillis = millis();
@@ -88,7 +88,7 @@ void loop()
 	if(IEC::ATN_RESET == iface.handler()) {
 
 #ifdef USE_LED_DISPLAY
-		pMax->resetScrollText_p(myText);
+		pMax->resetScrollText(myText);
 		// Indicate that IEC is in reset state.
 		pMax->setToCharacter('R');
 #endif
